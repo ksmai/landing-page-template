@@ -21,7 +21,13 @@ Coming soon
   - As a user, I can hover the project images to see their detailed descriptions.
 
 ## Development
-TODO
+```
+yarn           # install dependencies
+yarn run dev   # start dev server
+yarn run build # build for production
+yarn test      # run tests
+yarn run lint  # lint codes
+```
 
 ## License
 MIT
