@@ -7,6 +7,15 @@
   "repository": "git@github.com:ksmai/landing-page-template.git",
   "author": "ksmai <kasingmai@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "yarn run clean && cross-env NODE_ENV=production webpack",
+    "clean": "rimraf docs",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "lint": "tslint \"src/**/*.ts\"",
+    "start": "npm run dev",
+    "test": "cross-env NODE_ENV=test karma start",
+    "travis": "yarn run lint && yarn test && yarn run build"
+  },
   "dependencies": {
     "@angular/animations": "^5.2.2",
     "@angular/common": "^5.2.2",
@@ -15,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^5.2.2",
     "@angular/router": "^5.2.2",
     "core-js": "^2.5.3",
+    "font-awesome": "^4.7.0",
     "rimraf": "^2.6.2",
     "rxjs": "^5.5.6",
     "web-animations-js": "^2.3.1",
