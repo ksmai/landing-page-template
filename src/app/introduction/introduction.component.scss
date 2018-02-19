@@ -1,0 +1,62 @@
+@import "../../styles/color.scss";
+@import "../../styles/media-queries.scss";
+
+.introduction {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+
+  &__title {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    text-align: center;
+
+    @include non-mobile {
+      font-size: 2em;
+      max-width: 600px;
+    }
+
+    &:after {
+      display: block;
+      content: "";
+      width: 40px;
+      margin: 20px auto;
+      border-bottom: 2px solid #fff;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+
+    @include non-mobile {
+      font-size: 1.2em;
+      max-width: 600px;
+    }
+  }
+
+  &__button {
+    text-transform: uppercase;
+    background-color: #fff;
+    color: $text-color;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    height: 50px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: bold;
+    letter-spacing: .01em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#fff, 2%);
+    }
+  }
+}
