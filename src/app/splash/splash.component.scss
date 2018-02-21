@@ -1,0 +1,82 @@
+@import "../../styles/color.scss";
+@import "../../styles/media-queries.scss";
+
+.splash {
+  padding: 60px 20px;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(2px) grayscale(90%) brightness(.6);
+    background-image: url(../../../assets/hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__title {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    letter-spacing: .02em;
+    text-align: center;
+
+    @include non-mobile {
+      font-size: 2.3em;
+      max-width: 600px;
+    }
+
+    &:after {
+      display: block;
+      content: "";
+      width: 40px;
+      margin: 30px auto;
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+
+    @include non-mobile {
+      font-size: 1.4em;
+      max-width: 600px;
+    }
+  }
+
+  &__button {
+    text-transform: uppercase;
+    background-color: $primary-color;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    height: 50px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: bold;
+    letter-spacing: .01em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primary-color, 2%);
+    }
+  }
+}
