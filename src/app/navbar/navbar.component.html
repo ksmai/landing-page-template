@@ -1,0 +1,28 @@
+<header class="navbar" [class.navbar--is-top]="isTop">
+  <div class="container">
+    <h1 class="name">
+      <a
+        href="#"
+        class="name__link"
+        (click)="scrollTo('home', $event)"
+      >Lorem Ipsum</a>
+    </h1>
+
+    <nav class="nav" [class.nav--toggled]="toggled">
+      <ul class="nav__list">
+        <li class="nav__item" *ngFor="let navLink of navLinks">
+          <a
+            href="#"
+            class="nav__link"
+            [class.nav__link--active]="activeSection === navLink.key"
+            (click)="scrollTo(navLink.key, $event)"
+          >{{navLink.name}}</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button type="button" class="toggle-button" (click)="onToggle()">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+</header>

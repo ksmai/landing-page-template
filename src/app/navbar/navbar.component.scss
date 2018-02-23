@@ -1,0 +1,137 @@
+@import "../../styles/color.scss";
+@import "../../styles/media-queries.scss";
+@import "../../styles/easing.scss";
+
+$scroll-transition: .3s $ease-in-out;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  transition: background-color $scroll-transition;
+  z-index: 100;
+
+  &--is-top {
+    @include non-mobile {
+      background-color: transparent;
+    }
+  }
+}
+
+.container {
+  max-width: 1024px;
+  height: 60px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+  &__link {
+    color: $primary-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.25em;
+    letter-spacing: .05em;
+    font-weight: 700;
+
+    .navbar--is-top & {
+      @include non-mobile {
+        color: rgba(255, 255, 255, .7);
+        transition: color $scroll-transition;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #fff;
+  overflow: hidden;
+  transition: height .5s $ease-in-out;
+
+  &--toggled {
+    height: 146px;
+  }
+
+  @include non-mobile {
+    position: static;
+    height: 100%;
+    width: auto;
+    background-color: transparent;
+  }
+
+  &__list {
+    padding: 5px 0;
+
+    @include non-mobile {
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    padding: 5px 30px;
+
+    @include non-mobile {
+      padding: 0 10px;
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $text-color;
+    letter-spacing: .03em;
+    font-size: .9em;
+    font-weight: bold;
+
+    @include non-mobile {
+      font-size: .85em;
+    }
+
+    .navbar--is-top & {
+      @include non-mobile {
+        transition: color $scroll-transition;
+        color: rgba(255, 255, 255, .7);
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+
+    &--active,
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.toggle-button {
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, .12);
+  background-color: transparent;
+  padding: 5px 15px;
+  font-size: 1.3em;
+  color: $text-color;
+  border-radius: 4px;
+
+  @include non-mobile {
+    display: none;
+  }
+}
