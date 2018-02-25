@@ -1,0 +1,16 @@
+<div class="features" #services>
+  <h2 class="features__title">At Your Service</h2>
+  <ul class="feature-list">
+    <li
+      class="feature"
+      *ngFor="let feature of features; let i=index"
+    >
+      <i
+        class="fa fa-5x fa-{{ feature.icon }} feature__icon"
+        [landingPopWhenScrolled]="i * 200"
+      ></i>
+      <h5 class="feature__name">{{ feature.name }}</h5>
+      <p class="feature__content">{{ feature.content }}</p>
+    </li>
+  </ul>
+</div>

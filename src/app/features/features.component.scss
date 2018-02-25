@@ -1,0 +1,63 @@
+@import "../../styles/color.scss";
+@import "../../styles/media-queries.scss";
+
+.features {
+  padding: 60px 20px;
+
+  &__title {
+    color: $text-color;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 0 auto;
+
+    @include non-mobile {
+      font-size: 2em;
+      max-width: 600px;
+    }
+
+    &:after {
+      display: block;
+      content: "";
+      width: 40px;
+      margin: 20px auto 40px;
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+}
+
+.feature-list {
+  max-width: 1024px;
+  margin: 0 auto;
+
+  @include non-mobile {
+    display: flex;
+  }
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include non-mobile {
+    padding: 0 20px;
+  }
+
+  &__icon {
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    text-align: center;
+    color: $text-color;
+    font-size: 1.3em;
+  }
+
+  &__content {
+    margin-bottom: 30px;
+    text-align: center;
+    color: $light-color;
+  }
+}
