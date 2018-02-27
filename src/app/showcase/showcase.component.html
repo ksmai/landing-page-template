@@ -1,0 +1,51 @@
+<ul class="projects" #portfolio>
+  <li
+    *ngFor="let project of projects; let i=index"
+    class="project"
+    [style.background-image]="'url(' + project.photo + ')'"
+    (click)="openCarousel(i)"
+  >
+    <div class="project__description">
+      <h5 class="project__header">Category</h5>
+      <h6 class="project__name">{{ project.name }}</h6>
+    </div>
+  </li>
+</ul>
+
+<div class="download">
+  <h3 class="download__header">Free Download at github!</h3>
+  <a
+    href="https://github.io/ksmai/landing-template"
+    class="download__button"
+    [landingPopWhenScrolled]="0"
+  >Download now!</a>
+</div>
+
+<div class="carousel" *ngIf="currentIndex !== null">
+  <div class="carousel__body">
+    <i
+      class="fa fa-times fa-2x carousel__close"
+      (click)="closeCarousel()"
+      title="Close (Esc)"
+    ></i>
+    <img
+      [src]="projects[currentIndex].photo"
+      [alt]="projects[currentIndex].name"
+      class="carousel__image"
+      (click)="onNext()"
+    >
+    <span class="carousel__page">
+      {{ currentIndex + 1 }} of {{ projects.length }}
+    </span>
+  </div>
+  <i
+    class="fa fa-caret-left fa-3x carousel__left"
+    (click)="onPrevious()"
+    title="Previous (Left Arrow Key)"
+  ></i>
+  <i
+    class="fa fa-caret-right fa-3x carousel__right"
+    (click)="onNext()"
+    title="Next (Right Arrow Key)"
+  ></i>
+</div>
