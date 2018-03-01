@@ -1,0 +1,73 @@
+@import "../../styles/color.scss";
+@import "../../styles/media-queries.scss";
+
+.contact {
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__header {
+    color: $text-color;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 0 auto;
+
+    @include non-mobile {
+      font-size: 2em;
+      max-width: 600px;
+    }
+
+    &:after {
+      display: block;
+      content: "";
+      width: 40px;
+      margin: 20px auto 40px;
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+
+  &__content {
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &__methods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include non-mobile {
+      flex-direction: row;
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+
+  &__method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    @include non-mobile {
+      padding: 0 20px;
+      flex: 1;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 10px;
+  }
+
+  &__info {
+    &--email {
+      text-decoration: none;
+      color: $primary-color;
+    }
+  }
+}
