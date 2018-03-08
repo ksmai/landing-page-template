@@ -2,7 +2,7 @@
 A clone of [this landing page template](https://blackrockdigital.github.io/startbootstrap-creative/)
 
 ## Demo
-Coming soon
+https://ksmai.github.io/landing-page-template/
 
 ## User stories
 
@@ -19,6 +19,8 @@ Coming soon
   - As a user, I can use the buttons in hero/cta section to jump to the next section
   - As a user, I can see icons/buttons popping up in sequence as I scroll to them.
   - As a user, I can hover the project images to see their detailed descriptions.
+  - As a user, I can click on project images to see a carousel.
+  - As a user, I can use the buttons or keyboard to navigate around the carousel.
 
 ## Development
 ```
